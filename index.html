@@ -43,9 +43,11 @@ const API_URL = "https://script.google.com/macros/s/AKfycbxtyuwiwH3g_tLsHuDh0qJ0
 
 fetch(API_URL)
 
-.then(res => res.json())
+.then(res => res.text())
 
-.then(data => {
+.then(text => {
+
+  const data = JSON.parse(text);
 
   const grouped = {};
 
